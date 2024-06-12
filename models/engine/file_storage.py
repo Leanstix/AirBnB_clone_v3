@@ -81,7 +81,7 @@ class FileStorage:
                         return value
             return
         return
-    
+
     def count(self, cls=None):
         """
         count: counts the number of objects from the file storage

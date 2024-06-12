@@ -87,8 +87,6 @@ class TestFileStorage(unittest.TestCase):
 
         all_obj = session.query(State).all()
         self.assertTrue(len(all_obj > 0))
-        
-
 
     @unittest.skipIf(models.storage_t != 'db', "not testing db storage")
     def test_new(self):
@@ -100,7 +98,7 @@ class TestFileStorage(unittest.TestCase):
 
         session = models.storage._DBStorage__session
 
-        retrieved_state = session.query(State).filter_by(id = new_state).first()
+        retrieved_state = session.query(State).filter_by(id=new_state).first()
 
         self.assertEqual(retrieved_state.id, new_state.id)
         self.assertEqual(retrieved_state.name, new_state.name)
